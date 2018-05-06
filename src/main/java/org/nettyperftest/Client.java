@@ -63,4 +63,10 @@ public class Client  extends SimpleChannelInboundHandler<Message> {
     protected void channelRead0(ChannelHandlerContext ctx, Message m) throws Exception {
         System.out.println("Client received message");
     }
+
+    @Override
+    public void exceptionCaught(ChannelHandlerContext ctx, Throwable cause) {
+        System.out.println(cause);
+        ctx.close();
+    }
 }

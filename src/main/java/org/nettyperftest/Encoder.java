@@ -13,9 +13,9 @@ public class Encoder  extends MessageToByteEncoder<Message> {
 
     @Override
     protected void encode(ChannelHandlerContext channelHandlerContext,
-                          Message corfuMsg,
+                          Message msg,
                           ByteBuf byteBuf) throws Exception {
 
-            corfuMsg.serialize(byteBuf);
+        msg.serialize(byteBuf);
     }
 }

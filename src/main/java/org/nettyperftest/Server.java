@@ -52,7 +52,9 @@ public class Server {
             }
         });
 
-        bootstrap.bind(port).sync().channel().closeFuture().syncUninterruptibly();
+        bootstrap.bind("localhost", 9090).sync().channel().closeFuture().syncUninterruptibly();
+
+        System.out.println("Starting server...");
     }
 
 }
